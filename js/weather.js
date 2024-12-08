@@ -15,10 +15,10 @@ function fetchWeather() {
             console.log('Weather data:', data);
 
             // 构建所需的字符串格式
-            var weatherString = `${data.place} 降水: ${data.precipitation} 温度: ${data.temperature} 气压: ${data.pressure} 湿度: ${data.humidity} 风向: ${data.windDirection} 风向角度: ${data.windDirectionDegree} 风速: ${data.windSpeed} 风力等级: ${data.windScale} 天气: ${data.weather1}转${data.weather2}`;
-
+            var weatherString = `${data.place} 降水: ${data.precipitation} 温度: ${data.temperature} 气压: ${data.pressure} 湿度: ${data.humidity} 风向: ${data.windDirection}
+            var weatherString2 = `风向角度: ${data.windDirectionDegree} 风速: ${data.windSpeed} 风力等级: ${data.windScale} 天气: ${data.weather1}转${data.weather2}`;
             // 在网页上显示结果
-            document.getElementById("weather").textContent = weatherString;
+            document.getElementById("weather").textContent = weatherString <br> weatherString2;
         })
         .catch(error => console.error('Error fetching weather data:', error)); // 如果获取数据失败，输出错误信息
 }
