@@ -14,9 +14,11 @@ function fetchWeather() {
             // 在控制台输出获取到的数据，便于调试
             console.log('Weather data:', data);
 
-            // 处理数据并显示在网页上
-            var weatherString = JSON.stringify(data, null, 2); // 将JSON数据转换为字符串，便于阅读
-            document.getElementById("weather").textContent = weatherString; // 将字符串插入到页面指定区域
+            // 构建所需的字符串格式
+            var weatherString = `${data.place} 降水: ${data.precipitation} 温度: ${data.temperature} 气压: ${data.pressure} 湿度: ${data.humidity} 风向: ${data.windDirection} 风向角度: ${data.windDirectionDegree} 风速: ${data.windSpeed} 风力等级: ${data.windScale} 天气: ${data.weather1}转${data.weather2}`;
+
+            // 在网页上显示结果
+            document.getElementById("weather").textContent = weatherString;
         })
         .catch(error => console.error('Error fetching weather data:', error)); // 如果获取数据失败，输出错误信息
 }
