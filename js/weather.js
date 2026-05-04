@@ -3,7 +3,7 @@
 // 获取天气数据的函数
 function fetchWeather() {
     // 使用fetch()函数从API获取天气数据
-    fetch('https://cn.apihz.cn/api/tianqi/tqyb.php?id=88888888&key=88888888&sheng=江西&place=南昌')
+    fetch('https://cn.apihz.cn/api/tianqi/tqyb.php?id=10016280&key=54933f1eeb14279704485476db8a3680&sheng=江西&place=南昌')
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok ' + response.statusText);
