@@ -35,17 +35,8 @@ function fetchWeather() {
             // 当前天气数据（可能为空对象）
             const now = data.nowinfo || {};
 
-            // 构建显示字符串，缺失字段用 'N/A' 代替
-            const weatherString = `${location} 
-降水: ${now.precipitation ?? 'N/A'} mm
-温度: ${now.temperature ?? 'N/A'} ℃
-气压: ${now.pressure ?? 'N/A'} hPa
-湿度: ${now.humidity ?? 'N/A'} %
-风向: ${now.windDirection ?? 'N/A'}
-风速: ${now.windSpeed ?? 'N/A'} m/s
-风力等级: ${now.windScale ?? 'N/A'}
-天气: ${data.weather1 || ''}${data.weather2 ? '转' + data.weather2 : ''}
-更新时间: ${now.uptime || data.uptime || '未知'}`;
+            // 构建显示字符串（单行，去掉换行）
+            const weatherString = `${location} 降水: ${now.precipitation ?? 'N/A'}mm 温度: ${now.temperature ?? 'N/A'}℃ 气压: ${now.pressure ?? 'N/A'}hPa 湿度: ${now.humidity ?? 'N/A'}% 风向: ${now.windDirection ?? 'N/A'} 风速: ${now.windSpeed ?? 'N/A'}m/s 风力等级: ${now.windScale ?? 'N/A'} 天气: ${data.weather1 || ''}${data.weather2 ? '转' + data.weather2 : ''} 更新时间: ${now.uptime || data.uptime || '未知'}`;
 
             weatherElement.innerText = weatherString;
         })
